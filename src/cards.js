@@ -7,7 +7,7 @@ const cardBacks = ['KM', 'KM', 'DM', 'DM'];
 function shuffle(n) {
   let index;
   let temphold;
-  cardBacks.length = turn
+  let turn = cardBacks.length;
 while(cardBacks.length > 0) {
   index = Math.floor(Math.random() * cardBacks.length);
   cardBacks.length--;

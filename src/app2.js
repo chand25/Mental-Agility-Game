@@ -2,7 +2,7 @@
 let memoryValues = [];
 let memoryID = [];
 let cardsFlipped = 0;
-const cardBacks = ["Red", "Black", "Orange", "Yellow", "Red", "Black", "Orange", "Yellow"];
+const cardBacks = ['KM', 'KM', 'DM', 'DM'];
 
 
 function shuffle () {
@@ -18,7 +18,6 @@ function shuffle () {
           cardBacks[curturn] = cardBacks[index];
           cardBacks[index] = temphold;
            }
-           return console.log(cardBacks);
          }
 
 
@@ -26,12 +25,11 @@ function newGame (){
   cardsFlipped =0;
   let output = ' ';
   shuffle();
-  i =0;
-  cardBacks.forEach(function(assign){
-  output += '<div id ="tile_' + i++ +' "</div>';
- });
-   document.getElementById('gameBoard').innerHTML = output;
+  for ( i = 0; i < cardBacks.length; i++){
+  output += '<div id ="tile_' +i+' " onclick="Flipcard(this, \''+cardBacks[i] + ' \' )"></div>';
+ }
+ document.getElementById('gameBoard').innerHTML = output;
+
 }
 
-/*if assigned values is  blank or have not been assigned and no id given then
-window.addEventListener("onload", newGame()); */
+window.addEventListener(newGame());

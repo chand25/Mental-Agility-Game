@@ -4,7 +4,7 @@ html, body{
 }
 
 #gameBoard{
-  background-color: silver;
+  background-color: lightblue;
   width: 85%;
   height: 75%;
   border: 2px solid black;
@@ -12,21 +12,28 @@ html, body{
   padding: 2%;
 }
 
+
+
 #gameBoard > div{
     background-image: url("../assets/cardfront.jpeg");
+    display: inline-block;
     background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    text-align: center;
+    line-height: 50%;
     background-position: 10% 6%;
     box-sizing: border-box;
     border-top: 10px solid hsla(235, 100%, 30%, 0.8);
-    border-left: 11.4px solid hsla(235, 100%, 30%, 0.8);
-    border-right: 11.4px solid hsla(235, 100%, 30%, 0.8);
+    border-left: 8px solid hsla(235, 100%, 30%, 0.8);
+    border-right: 8px solid hsla(235, 100%, 30%, 0.8);
     border-bottom: 10px solid hsla(235, 100%, 30%, 0.8);
     border-top-left-radius: 20px;
     border-bottom-left-radius: 30px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 30px;
     height: 45%;
-    width: 17%;
+    width: 15%;
+    margin: 5px;
     backface-visibility: hidden;
   }
+
