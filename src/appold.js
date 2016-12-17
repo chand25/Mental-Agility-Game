@@ -31,23 +31,39 @@ function startGame () {
       });
       document.querySelector('#gameBoard').innerHTML = output;
       console.log(output);
- }
+ };
 
 //window.addEventListener("onload", startGame);
+
+
+function magic3DFlip(cardfront, val){
+     if(cardfront.innerHTML == "" && memoryValues.length < 2){
+           cardfront.style.background = 'red';
+           cardfront.innerHTML = val;
+                    if(memoryValues.length == 0){
+                      memoryValues.push(val);
+                      memoryID.push(cardfront.id);
+                    }else if (memoryValues.length == 1){
+                      memoryValues.push(val);
+                       memoryID.push(cardfront.id);
+                       solo2GameWin ();
+                    }else {
+                      returnBack ();
+                      setTimeout(returnBack, 900);
+                    }
 
 
 
 function solo2GameWIn () {
         if (memoryValues[0] = memoryValues[1]){
-           cardsFlipped += 2;
-           memoryValues = [];
-           memoryID =[];
-           if (cardsFlipped == curturn){
-             //curturn = cardBacks.length
-            alert("We have a winner! Please start new Game");
-           }
-        }
-}
+                      cardsFlipped += 2;
+                      memoryValues = [];
+                      memoryID =[];
+                      if (cardsFlipped == curturn){
+                        //curturn = cardBacks.length
+                        alert("We have a winner! Please start new Game");
+                      }
+                     };
 
 
 function returnBack () {
@@ -59,31 +75,4 @@ function returnBack () {
   choice2.innerHTML = "";
   memoryValues = [];
   memoryID = [];
-}
-
-
-
-
-
-function magic3DFlip(cardfront, val){
-   if(cardfront.innerHTML == "" && memoryValues.length < 2){
-     cardfront.style.background = 'red';
-     cardfront.innerHTML = val;
-     if(memoryValues.length == 0){
-      memoryValues.push(val);
-      memoryID.push(cardfront.id);
-     }else if (memoryValues.length == 1){
-      memoryValues.push(val);
-      memoryID.push(cardfront.id);
-      solo2GameWin ();
-     }else {
-       returnBack ();
-       setTimeout(returnBack, 500);
-     }
-   }
-}
-
-
-
-
-
+};

@@ -18,9 +18,8 @@ html, body{
     background-image: url("../assets/cardfront.jpeg");
     display: inline-block;
     background-attachment: fixed;
+    overflow: hidden;
     background-repeat: repeat;
-    text-align: center;
-    line-height: 50%;
     background-position: 10% 6%;
     box-sizing: border-box;
     border-top: 10px solid hsla(235, 100%, 30%, 0.8);

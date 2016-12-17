@@ -25,7 +25,7 @@ function startGame () {
       cardsFlipped =0;
       let output = ' ';
       shuffle();
-      i = 0;
+      i = -1;
       cardBacks.forEach(function(assign){
       output += '<div id ="cardfront_' + i++ +' " onclick="magic3DFlip(this, \''+cardBacks[i] + ' \' )"></div>'
       });
@@ -35,9 +35,7 @@ function startGame () {
 
 //window.addEventListener("onload", startGame);
 
-
-
-function solo2GameWIn () {
+function solo2GameWin () {
         if (memoryValues[0] = memoryValues[1]){
            cardsFlipped += 2;
            memoryValues = [];
@@ -48,6 +46,8 @@ function solo2GameWIn () {
            }
         }
 }
+
+
 
 
 function returnBack () {
@@ -67,22 +67,28 @@ function returnBack () {
 
 function magic3DFlip(cardfront, val){
    if(cardfront.innerHTML == "" && memoryValues.length < 2){
-     cardfront.style.background = 'red';
-     cardfront.innerHTML = val;
-     if(memoryValues.length == 0){
-      memoryValues.push(val);
-      memoryID.push(cardfront.id);
-     }else if (memoryValues.length == 1){
-      memoryValues.push(val);
-      memoryID.push(cardfront.id);
-      solo2GameWin ();
-     }else {
-       returnBack ();
-       setTimeout(returnBack, 500);
+       cardfront.style.background = 'red';
+       cardfront.innerHTML = val;
+       if(memoryValues.length == 0){
+        memoryValues.push(val);
+        memoryID.push(cardfront.id);
+       }else if (memoryValues.length == 1){
+        memoryValues.push(val);
+        memoryID.push(cardfront.id);
+        if (memoryValues[0] = memoryValues[1]){
+           cardsFlipped += 2;
+           memoryValues = [];
+           memoryID =[];
+           if (cardsFlipped == cardBacks.length){
+            alert("We have a winner! Please start new Game");
+           }
+        }
+       }else {
+         returnBack ();
+         setTimeout(returnBack, 500);
+       }
      }
-   }
 }
-
 
 
 
