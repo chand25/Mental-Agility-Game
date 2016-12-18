@@ -2,7 +2,7 @@
 let memoryValues = [];
 let memoryID = [];
 let cardsFlipped = 0;
-const cardBacks = ["Red", "Black", "Orange", "Yellow", "Red", "Black", "Orange", "Yellow"];
+const cardBacks = ["Red", "Black", "Orange", "Yellow", "Blue", "Purple", "Red", "Black", "Orange", "Yellow", "Blue", "Purple"];
 
 let curturn = cardBacks.length;
 
@@ -33,9 +33,6 @@ function startGame () {
       console.log(output);
  }
 
-
-
-//window.addEventListener("onload", startGame);
 
 /*
 function solo2GameWin () {
@@ -84,12 +81,10 @@ function magic3DFlip(cardfront, val){
            }
         }else {
               function returnBack () {
-              let choice1 = document.getElementById(memoryID[0]);
-              let choice2 = document.getElementById(memoryID[1]);
-              choice1.style.background = "url ('assets/cardfront.jpeg')";
-              choice2.style.background = "url('assets/cardfront.jpeg')";
-              choice1.innerHTML = "";
-              choice2.innerHTML = "";
+              document.getElementById(memoryID[0]).style.background = "url('assets/cardfront.jpeg')";
+              document.getElementById(memoryID[1]).style.background = "url('assets/cardfront.jpeg')";
+              document.getElementById(memoryID[0]).innerHTML = "";
+              document.getElementById(memoryID[1]).innerHTML = "";
               memoryValues = [];
               memoryID = [];
             }
@@ -97,4 +92,11 @@ function magic3DFlip(cardfront, val){
         }
        }
      }
+};
+
+
+
+window.onload = function() {
+document.querySelector('#reset').addEventListener('click', startGame);
 }
+

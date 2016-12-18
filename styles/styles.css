@@ -4,7 +4,7 @@ html, body{
 }
 
 #gameBoard{
-  background-color: lightblue;
+  background-image: url("../assets/think.jpg");
   width: 85%;
   height: 75%;
   border: 2px solid black;
@@ -17,10 +17,14 @@ html, body{
 #gameBoard > div{
     background-image: url("../assets/cardfront.jpeg");
     display: inline-block;
+    font-size: 50px;
+    color: red;
+    text-align: center;
+    line-height: 150px;
     background-attachment: fixed;
     overflow: hidden;
     background-repeat: repeat;
-    background-position: 10% 6%;
+    background-position: 11% 6%;
     box-sizing: border-box;
     border-top: 10px solid hsla(235, 100%, 30%, 0.8);
     border-left: 8px solid hsla(235, 100%, 30%, 0.8);
@@ -35,4 +39,3 @@ html, body{
     margin: 5px;
     backface-visibility: hidden;
   }
-

@@ -54,8 +54,8 @@ function magic3DFlip(cardfront, val){
 
 
 
-function solo2GameWIn () {
-        if (memoryValues[0] = memoryValues[1]){
+function solo2GameWin () {
+        if (memoryValues[0] == memoryValues[1]){
                       cardsFlipped += 2;
                       memoryValues = [];
                       memoryID =[];
