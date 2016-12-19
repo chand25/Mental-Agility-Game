@@ -1,24 +1,26 @@
-let memoryValues = [];
-let memoryID = [];
-let cardsFlipped = 0;
+console.log("cards.js is connected");
 
-const cardBacks = ['KM', 'KM', 'DM', 'DM'];
+class Card {
+  constructor(name, color) {
+    //Put attributes here!
+     this.name = name;
+     this.color = color;
+     renderNme();
+     renderClr();
 
-function shuffle(n) {
-  let index;
-  let temphold;
-  let turn = cardBacks.length;
-while(cardBacks.length > 0) {
-  index = Math.floor(Math.random() * cardBacks.length);
-  cardBacks.length--;
-
-  temphold = cardBacks[cardBacks.length];
-  cardBacks[cardBacks.length] = cardBacks[index];
-  cardBacks[index] = temphold;
   }
+   renderNme(name){
+   for(let i=0; i<this.name.length; i++){
+    let myCard = new Card(this.name[i]);
+    this.card.push(myCard);
+  }
+}
+    renderClr(color){
+    for(let i=0; i<this.color.length; i++){
+    let myCard2 = new Card(this.color[i]);
+    this.card.push(myCard2);
+    }
+  }
+}
 
-};
 
-//for or while each card I want the values to change once function is called
-//switcharoo
-function shuffle();
