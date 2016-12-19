@@ -130,6 +130,8 @@ function magic3DFlip(cardfront, val){
        }else if (memoryValues.length == 1){
         memoryValues.push(val);
         memoryID.push(cardfront.id);
+/*This is the win logic below. There are two types of matches.... one with orange background and values are identical and other
+where the backgrounds match*/
         if ((memoryValues[0] == memoryValues[1] && document.getElementById(memoryID[0]).style.background === document.getElementById(memoryID[1]).style.background)
           || (document.getElementById(memoryID[0]).style.background === document.getElementById(memoryID[1]).style.background && cardfront.style.background !== "orange")){
            cardsFlipped += 2;
@@ -138,7 +140,7 @@ function magic3DFlip(cardfront, val){
            if (cardsFlipped == cardBacks.length){
             alert("Level 1 complete! Level 2 is WIP");
            }
-        }else {
+         }else {
               function returnBack () {
               document.getElementById(memoryID[0]).style.background = "url('assets/cardfront.jpeg')";
               document.getElementById(memoryID[1]).style.background = "url('assets/cardfront.jpeg')";

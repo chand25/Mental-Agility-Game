@@ -1,6 +1,6 @@
 console.log("cards.js is connected");
 
-class Card {
+class Cards {
   constructor(name, color) {
     //Put attributes here!
      this.name = name;

@@ -28,7 +28,7 @@ body{
     background-attachment: fixed;
     overflow: hidden;
     background-repeat: repeat;
-    background-position: 10% 15%;
+    background-position: 10% 20%;
     box-sizing: border-box;
     border-top: 10px solid hsla(235, 100%, 30%, 0.8);
     border-left: 8px solid hsla(235, 100%, 30%, 0.8);
@@ -63,6 +63,7 @@ button{
 
 
 h1{
+  font-size: 40px;
   text-align: center;
   color: white;
   font-family: 'Special Elite', cursive;
