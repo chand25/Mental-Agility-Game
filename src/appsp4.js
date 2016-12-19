@@ -17,6 +17,10 @@ function shuffle () {
           temphold = cardBacks[curturn];
           cardBacks[curturn] = cardBacks[index];
           cardBacks[index] = temphold;
+
+
+
+
            }
          }
 
@@ -65,7 +69,9 @@ function returnBack () {
 function magic3DFlip(cardfront, val){
    if(cardfront.innerHTML == "" && memoryValues.length < 2){
         cardfront.innerHTML = val;
-        cardfront.style.background = 'blue';
+        cardfront.style.background = "blue";
+        $("div div:nth-child(odd)").css("background-color", "white");
+        $("div div:nth-child(even)").css("color", "red");
 
        if(memoryValues.length == 0){
         memoryValues.push(val);

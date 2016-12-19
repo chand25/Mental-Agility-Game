@@ -2,7 +2,11 @@
 let memoryValues = [];
 let memoryID = [];
 let cardsFlipped = 0;
-const cardBacks = ["Red", "Black", "Orange", "Yellow", "Blue", "Purple", "Red", "Black", "Orange", "Yellow", "Blue", "Purple"];
+let backgdCards =["White", "Black", "Red", "Black", "Black", "White"]
+let nameCards =  ["White", "Black", "Red", "Black", "White", "Red"]
+
+const cardBacks = [backgdCards, nameCards]
+//const cardBacks = ["White", "Black", "Red", "Black", "White", "Red", ["White", "Black", "red", "Black", "Black", "White"]];
 
 let curturn = cardBacks.length;
 
@@ -17,6 +21,10 @@ function shuffle () {
           temphold = cardBacks[curturn];
           cardBacks[curturn] = cardBacks[index];
           cardBacks[index] = temphold;
+
+
+
+
            }
          }
 
@@ -64,8 +72,17 @@ function returnBack () {
 
 function magic3DFlip(cardfront, val){
    if(cardfront.innerHTML == "" && memoryValues.length < 2){
+        cardfront.style.background = "orange";
+        //$("div div:nth-child(odd)").css("background-color", "white");
+        //$("div div:nth-child(even)").css("color", "red");
+         $("div div:nth-child(5)").css("background-color", "red");
+         $("div div:nth-child(6)").css("background-color", "white");
+          $("div div:nth-child(7)").css("background-color", "black");
+          $("div div:nth-child(8)").css("background-color", "red");
+         $("div div:nth-child(9)").css("background-color", "white");
+          $("div div:nth-child(10)").css("background-color", "black");
+        //$("div div:nth-child(odd)").attr('attribute', 'value');
         cardfront.innerHTML = val;
-        cardfront.style.background = 'blue';
 
        if(memoryValues.length == 0){
         memoryValues.push(val);

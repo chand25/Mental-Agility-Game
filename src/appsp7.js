@@ -2,17 +2,24 @@
 let memoryValues = [];
 let memoryID = [];
 let cardsFlipped = 0;
-const cardBacks = ["Red", "Black", "Orange", "Yellow", "Blue", "Purple", "Red", "Black", "Orange", "Yellow", "Blue", "Purple"];
 
-let curturn = cardBacks.length;
 
-function shuffle () {
+const cardBacks = [["White"], ["Black"], ["Red"], ["Black"], ["Red"], ["White"], ["White"], ["Black"], ["Red"], ["Black"], ["White"], ["Red"]]
+
+let backgdCards = [cardBacks[0], cardBacks[1], cardBacks[2],cardBacks[3], cardBacks[4], cardBacks[5]]
+let nameCards = [cardBacks[6], cardBacks[7], cardBacks[8],cardBacks[9], cardBacks[10], cardBacks[11]]
+
+let curturn = backgdCards.length
+let currpass = nameCards.length
+
+
+function shuffleClr () {
           let index;
           let temphold;
         //for or while each card I want the values to change once function is called
         //switcharoo
           while(curturn > 0) {
-          index = Math.floor(Math.random() * curturn);
+          index = Math.floor(Math.random() * curturn+1);
           curturn--;
           temphold = cardBacks[curturn];
           cardBacks[curturn] = cardBacks[index];
@@ -20,18 +27,34 @@ function shuffle () {
            }
          }
 
+function shuffleNme () {
+          let index;
+          let temphold;
+        //for or while each card I want the values to change once function is called
+        //switcharoo
+          while(currpass > 0) {
+          index = Math.floor(Math.random() * currpass+1);
+          currpass--;
+          temphold = nameCards[currpass];
+          nameCards[currpass] = nameCards[index];
+          nameCards[index] = temphold;
+           }
+         }
+
 
 function startGame () {
       cardsFlipped =0;
       let output = ' ';
-      shuffle();
-      i = -1;
+      shuffleNme();
+      shuffleClr();
+       let i = -1;
       cardBacks.forEach(function(assign){
-      output += '<div id ="cardfront_' + i++ +' " onclick="magic3DFlip(this, \''+cardBacks[i] + ' \' )"></div>'
-      });
+        output += '<div id ="cardfront_' + i++ +' " onclick="magic3DFlip(this, \''+cardBacks[i] + ' \' )"></div>'
+        });
       document.querySelector('#gameBoard').innerHTML = output;
       console.log(output);
  }
+
 
 
 /*
@@ -64,8 +87,16 @@ function returnBack () {
 
 function magic3DFlip(cardfront, val){
    if(cardfront.innerHTML == "" && memoryValues.length < 2){
+        cardfront.style.background = "orange";
+        //$("div div:nth-child(odd)").css("background-color", "white");
+        //$("div div:nth-child(even)").css("color", "red");
+         $("div div:nth-child(7)").css("background-color", "red");
+         $("div div:nth-child(8)").css("background-color", "white");
+          $("div div:nth-child(9)").css("background-color", "black");
+          $("div div:nth-child(10)").css("background-color", "red");
+         $("div div:nth-child(11)").css("background-color", "white");
+          $("div div:nth-child(12)").css("background-color", "black");
         cardfront.innerHTML = val;
-        cardfront.style.background = 'blue';
 
        if(memoryValues.length == 0){
         memoryValues.push(val);
