@@ -47,8 +47,7 @@ fix the graphics on cards since adding more cards distorted image.
 ## Contributing
 Stack Overflow 
 W3 Schools
-These resources really help with my syntax issues. Therefore I was able to write the extensive nested 
-if statements which has majority of the parameters for whole game.
+These resources really help with my syntax issues. Therefore I was able to write the extensive nested if statements which has majority of the parameters for whole game.
 
 
 ##Authors
